@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friday Night Lights - BHS Cheerleaders Fundraiser</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #2c1810 0%, #1a1a1a 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #6a1b9a 0%, #4a148c 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: -50px;
+            right: -50px;
+            bottom: -50px;
+            background-image: 
+                radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.1) 2px, transparent 2px),
+                radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.08) 3px, transparent 3px),
+                radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.06) 2px, transparent 2px),
+                radial-gradient(circle at 60% 60%, rgba(255, 255, 255, 0.1) 4px, transparent 4px),
+                radial-gradient(circle at 90% 80%, rgba(255, 255, 255, 0.07) 2px, transparent 2px),
+                radial-gradient(circle at 10% 80%, rgba(255, 255, 255, 0.09) 3px, transparent 3px);
+            background-size: 100px 100px, 150px 150px, 80px 80px, 120px 120px, 90px 90px, 110px 110px;
+            animation: stadiumLights 4s ease-in-out infinite alternate;
+            z-index: 1;
+        }
+        
+        .header-icons::before {
+            content: '🏈';
+            position: absolute;
+            top: 15px;
+            left: 30px;
+            font-size: 2rem;
+            z-index: 2;
+        }
+        
+        .header-icons::after {
+            content: '📣';
+            position: absolute;
+            top: 15px;
+            right: 30px;
+            font-size: 2rem;
+            z-index: 2;
+        }
+        
+        @keyframes stadiumLights {
+            0% { opacity: 0.6; }
+            100% { opacity: 1; }
+        }
+        
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            font-weight: 500;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .content {
+            padding: 40px 30px;
+        }
+        
+        .description {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            border-left: 5px solid #6a1b9a;
+        }
+        
+        .description h2 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+        
+        .description p {
+            line-height: 1.6;
+            color: #555;
+            font-size: 1.1rem;
+        }
+        
+        .links-section {
+            margin-bottom: 30px;
+        }
+        
+        .section-title {
+            color: #2c3e50;
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: 600;
+        }
+        
+        .payment-links {
+            display: grid;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .link-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 18px 25px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .venmo {
+            background: linear-gradient(135deg, #6a1b9a 0%, #4a148c 100%);
+            color: white;
+        }
+        
+        .cashapp {
+            background: linear-gradient(135deg, #2c3e50 0%, #1a1a1a 100%);
+            color: white;
+        }
+        
+        .auction {
+            background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%);
+            color: white;
+        }
+        
+        .link-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        .link-button:active {
+            transform: translateY(-1px);
+        }
+        
+        .icon {
+            margin-right: 12px;
+            font-size: 1.3rem;
+        }
+        
+        .prize-section {
+            background: #f5f5f5;
+            border: 2px solid #9e9e9e;
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+        }
+        
+        .prize-section h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        .prize-image {
+            width: 100%;
+            max-width: 400px;
+            height: 250px;
+            background: linear-gradient(45deg, #6a1b9a, #4a148c);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px auto;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            border: 2px solid #9e9e9e;
+        }
+        
+        .prize-text {
+            color: #2c3e50;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+        
+        .footer {
+            background: #2c3e50;
+            color: white;
+            padding: 25px 30px;
+            text-align: center;
+        }
+        
+        .footer p {
+            margin-bottom: 10px;
+        }
+        
+        .contact-info {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                margin: 10px;
+                border-radius: 15px;
+            }
+            
+            .header {
+                padding: 30px 20px;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .subtitle {
+                font-size: 1rem;
+            }
+            
+            .content {
+                padding: 30px 20px;
+            }
+            
+            .link-button {
+                padding: 15px 20px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-icons"></div>
+            <h1>Friday Night Lights</h1>
+            <div class="subtitle">BHS Cheerleaders Fundraiser</div>
+        </div>
+        
+        <div class="content">
+            <div class="description">
+                <h2>🎉 Support Our Cheerleaders!</h2>
+                <p><strong>Support your BHS Cheerleaders compete in their Nationals Competition at Disney!</strong></p>
+                <ul style="margin: 15px 0; padding-left: 20px; line-height: 1.8;">
+                    <li>We are hosting a <strong>Virtual Silent Auction</strong> starting 9.15.25 and will end 9.19.25 at 11:00 PM. Check out the link to place your bid!</li>
+                    <li>During the <strong>Varsity Homecoming Game</strong> - visit the BHS Cheer Table to purchase tickets for your chance to WIN BIG with our Prize Baskets!!</li>
+                    <li>Purchase <strong>Brownsburg Spirit Gear</strong> or Support us by giving your favorite Cheerleaders a Donation! You can use our Virtual payment options or find a Cheerleader in the stands & pay with Cash!!</li>
+                </ul>
+            </div>
+            
+            <div class="links-section">
+                <h3 class="section-title">💳 Make a Donation</h3>
+                <div class="payment-links">
+                    <a href="#" class="link-button venmo" onclick="showPaymentInfo('Venmo')">
+                        <span class="icon">💙</span>
+                        Pay with Venmo
+                    </a>
+                    
+                    <a href="#" class="link-button cashapp" onclick="showPaymentInfo('CashApp')">
+                        <span class="icon">💚</span>
+                        Pay with CashApp
+                    </a>
+                    
+                    <a href="https://www.32auctions.com/FNL-BHS-Cheer" target="_blank" class="link-button auction">
+                        <span class="icon">🎯</span>
+                        Silent Auction Fundraiser
+                    </a>
+                </div>
+            </div>
+            
+            <div class="prize-section">
+                <h3>🏆 Prize Baskets Available!</h3>
+                <div class="prize-image">
+                    🎁 Beautiful Prize Baskets<br>
+                    📸 Photo Coming Soon!
+                </div>
+                <p class="prize-text">
+                    Purchase Tickets for a chance to win these Amazing Prize Baskets! 
+                    Each basket is filled with wonderful items donated by local Businesses and Supporters.
+                </p>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p><strong>Thank you for supporting BHS Cheerleaders!</strong></p>
+            <p class="contact-info">For questions, contact the cheer team or school office</p>
+        </div>
+    </div>
+
+    <script>
+        function showPaymentInfo(platform) {
+            let username = platform === 'Venmo' ? '@BHS-Cheer-Fundraiser' : '$allifox08';
+            alert(`To donate via ${platform}:\n\n1. Open your ${platform} app\n2. Search for: ${username}\n3. Send your donation\n4. Add note: "BHS Cheer Fundraiser"\n\nThank you for your support! 🎉`);
+        }
+        
+        function showAuctionInfo() {
+            alert(`Silent Auction Details:\n\n📅 Date: [INSERT DATE]\n📍 Location: [INSERT LOCATION]\n⏰ Time: [INSERT TIME]\n\nBid on amazing items and experiences!\nAll proceeds support our cheerleaders.\n\n(Please update this page with actual auction details and link)`);
+        }
+        
+        // Add some interactive sparkle effects
+        function createSparkle() {
+            const sparkle = document.createElement('div');
+            sparkle.innerHTML = '✨';
+            sparkle.style.position = 'fixed';
+            sparkle.style.left = Math.random() * window.innerWidth + 'px';
+            sparkle.style.top = Math.random() * window.innerHeight + 'px';
+            sparkle.style.fontSize = '20px';
+            sparkle.style.pointerEvents = 'none';
+            sparkle.style.zIndex = '1000';
+            sparkle.style.animation = 'sparkleFloat 3s ease-out forwards';
+            
+            document.body.appendChild(sparkle);
+            
+            setTimeout(() => {
+                sparkle.remove();
+            }, 3000);
+        }
+        
+        // Add CSS animation for sparkles
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes sparkleFloat {
+                0% { opacity: 1; transform: translateY(0px) rotate(0deg); }
+                100% { opacity: 0; transform: translateY(-100px) rotate(360deg); }
+            }
+        `;
+        document.head.appendChild(style);
+        
+        // Create sparkles occasionally
+        setInterval(createSparkle, 2000);
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97f96a8821a22336',t:'MTc1Nzk1Mjg1Ni4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
